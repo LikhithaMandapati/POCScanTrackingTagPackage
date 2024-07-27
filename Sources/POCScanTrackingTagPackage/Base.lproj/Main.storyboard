@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="POCScanTrackingTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxE-4A-fNN">
+                                <rect key="frame" x="16" y="500" width="177" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Barcode"/>
+                                <connections>
+                                    <action selector="btnScanBarcodeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znN-4i-lmd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-0E-e82">
+                                <rect key="frame" x="212" y="500" width="144" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Text"/>
+                                <connections>
+                                    <action selector="btnScanTextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZrQ-zh-TKY"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-gG-H4A">
+                                <rect key="frame" x="16" y="179" width="361" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtViewCapturedTag" destination="SpW-gG-H4A" id="5a4-2L-kmE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="kBb-Fb-2zQ">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="Zaf-LB-hTO" userLabel="Camera View Controller" customClass="CameraViewController" customModule="AVCamBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="89M-tw-YI4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khC-Mw-N6g" customClass="PreviewView" customModule="AVCamBarcode" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-k5-sZj">
+                                        <rect key="frame" x="263" y="82" width="98.333333333333371" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelBtnTapped:" destination="Zaf-LB-hTO" eventType="touchUpInside" id="61B-w9-q86"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Unavailable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtX-wR-gUw">
+                                <rect key="frame" x="93" y="411.66666666666669" width="207" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cuh-2I-feR">
+                                <rect key="frame" x="14" y="724" width="365" height="31"/>
+                                <connections>
+                                    <action selector="zoomCameraWith:" destination="Zaf-LB-hTO" eventType="valueChanged" id="83V-Mt-8cq"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUy-IC-PLy">
+                                <rect key="frame" x="40.999999999999993" y="762" width="98.333333333333314" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Metadata"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectMetadataObjectTypes" destination="Zaf-LB-hTO" eventType="touchUpInside" id="CQY-jk-Fdj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTQ-xk-c7U">
+                                <rect key="frame" x="147.33333333333334" y="762" width="98.333333333333343" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="OPn-bV-jBc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Presets"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectSessionPreset" destination="Zaf-LB-hTO" eventType="touchUpInside" id="S37-kJ-ygO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAs-bw-BGW">
+                                <rect key="frame" x="253.66666666666666" y="762" width="98.333333333333343" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeCamera" destination="Zaf-LB-hTO" eventType="touchUpInside" id="tmV-Ot-s4g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C8l-WY-MeN"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="khC-Mw-N6g" firstAttribute="leading" secondItem="C8l-WY-MeN" secondAttribute="leading" id="1sj-eQ-vQa"/>
+                            <constraint firstItem="wTQ-xk-c7U" firstAttribute="width" secondItem="khC-Mw-N6g" secondAttribute="width" multiplier="0.25" id="3Aw-UN-CwG"/>
+                            <constraint firstItem="IAs-bw-BGW" firstAttribute="centerY" secondItem="wTQ-xk-c7U" secondAttribute="centerY" id="8fL-pC-H6u"/>
+                            <constraint firstItem="YUy-IC-PLy" firstAttribute="centerY" secondItem="wTQ-xk-c7U" secondAttribute="centerY" id="KB3-7K-vE0"/>
+                            <constraint firstItem="C8l-WY-MeN" firstAttribute="trailing" secondItem="khC-Mw-N6g" secondAttribute="trailing" id="Kem-1L-eH8"/>
+                            <constraint firstItem="qtX-wR-gUw" firstAttribute="centerX" secondItem="C8l-WY-MeN" secondAttribute="centerX" id="KfE-dX-W83"/>
+                            <constraint firstItem="IAs-bw-BGW" firstAttribute="top" secondItem="cuh-2I-feR" secondAttribute="bottom" constant="8" id="MvS-6f-kS6"/>
+                            <constraint firstItem="C8l-WY-MeN" firstAttribute="bottom" secondItem="wTQ-xk-c7U" secondAttribute="bottom" constant="20" id="PVT-Nr-mWO"/>
+                            <constraint firstItem="IAs-bw-BGW" firstAttribute="width" secondItem="wTQ-xk-c7U" secondAttribute="width" id="QJK-Ce-WEG"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IAs-bw-BGW" secondAttribute="trailing" constant="31" id="Url-Ce-j9u"/>
+                            <constraint firstItem="wTQ-xk-c7U" firstAttribute="left" secondItem="YUy-IC-PLy" secondAttribute="right" constant="8" symbolic="YES" id="XvW-YS-kf6"/>
+                            <constraint firstItem="YUy-IC-PLy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="89M-tw-YI4" secondAttribute="leading" constant="31" id="Yy9-ig-A74"/>
+                            <constraint firstItem="khC-Mw-N6g" firstAttribute="top" secondItem="89M-tw-YI4" secondAttribute="top" id="d0Q-kk-aPp"/>
+                            <constraint firstItem="cuh-2I-feR" firstAttribute="leading" secondItem="89M-tw-YI4" secondAttribute="leadingMargin" id="dx6-nI-ArA"/>
+                            <constraint firstItem="IAs-bw-BGW" firstAttribute="left" secondItem="wTQ-xk-c7U" secondAttribute="right" constant="8" symbolic="YES" id="g1Z-14-0eu"/>
+                            <constraint firstItem="cuh-2I-feR" firstAttribute="trailing" secondItem="89M-tw-YI4" secondAttribute="trailingMargin" id="hIq-6z-R1R"/>
+                            <constraint firstAttribute="bottom" secondItem="khC-Mw-N6g" secondAttribute="bottom" id="ikK-bd-MkV"/>
+                            <constraint firstItem="qtX-wR-gUw" firstAttribute="centerY" secondItem="89M-tw-YI4" secondAttribute="centerY" id="jdc-IO-qMD"/>
+                            <constraint firstItem="wTQ-xk-c7U" firstAttribute="centerX" secondItem="C8l-WY-MeN" secondAttribute="centerX" id="knd-PE-oZK"/>
+                            <constraint firstItem="YUy-IC-PLy" firstAttribute="width" secondItem="wTQ-xk-c7U" secondAttribute="width" id="tgX-RU-zkd"/>
+                            <constraint firstItem="IAs-bw-BGW" firstAttribute="height" secondItem="wTQ-xk-c7U" secondAttribute="height" id="ths-OT-tlE"/>
+                            <constraint firstItem="YUy-IC-PLy" firstAttribute="height" secondItem="wTQ-xk-c7U" secondAttribute="height" id="vcA-3o-VbS"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="IAs-bw-BGW" id="Kbk-kE-yK5"/>
+                        <outlet property="cameraUnavailableLabel" destination="qtX-wR-gUw" id="q3C-mD-Os1"/>
+                        <outlet property="metadataObjectTypesButton" destination="YUy-IC-PLy" id="9z4-nq-TvE"/>
+                        <outlet property="previewView" destination="khC-Mw-N6g" id="kuy-Qc-lhy"/>
+                        <outlet property="sessionPresetsButton" destination="wTQ-xk-c7U" id="cMO-KL-hnP"/>
+                        <outlet property="zoomSlider" destination="cuh-2I-feR" id="dRT-Rv-h5X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-bf-BXP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="-18"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
